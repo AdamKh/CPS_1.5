@@ -1,0 +1,131 @@
+@font-face {
+    font-family: TTLakes;
+    src: url('fonts/TTLakes/TTLakes-Regular.woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: TTLakes bold;
+    src: url('fonts/TTLakes/TTLakes-ExtraBold.woff');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: TTLakes medium;
+    src: url('fonts/TTLakes/TTLakes-Medium.woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+/*  BODY  */
+
+body, * {
+    font-family: TTLakes;
+    color: #1B1C21;
+    margin: 0 auto;
+    background-color: #F8F8F8;
+    font-size: 16px;
+}
+
+*{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+[class$="--item--tablet"], [class$="--item--PC"] {
+    display: none;
+}
+
+.link {
+    text-decoration: none;
+}
+
+[class$="--flex-center"] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+
+
+/*  REPAIR-BRANDS  */
+
+
+.repair-brands::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background: #D9FFF5;
+}
+
+.repair-brands__header {
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 150%;
+    color: #7E7E82;
+    background: linear-gradient(270deg, #f8f8f8 0%, #fff 100%);
+    height: 80px;
+    padding: 16px;
+
+    margin-bottom: 16px;
+}
+
+/*  swiper  */
+
+.swiper {
+    padding: 0 16px;
+}
+
+.repair-brands__catalog--grid {
+
+}
+
+
+.swiper-pagination {
+    position: static;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    background-color: #979797;
+}
+
+.swiper-slide {
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    width: 240px;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swiper-slide:not(:last-child) {
+    margin-right: 16px;
+}
+
+.swiper-slide__button {
+    margin-right: 16px;
+    border: 2px solid #ff3e79;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    background: url('img/dropdown.svg') no-repeat center;
+}
+
+.swiper-slide__image {
+    margin-left: 16px;
+}
