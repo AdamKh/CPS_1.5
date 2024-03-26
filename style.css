@@ -188,7 +188,7 @@ body, * {
     }
 }
 
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1120px) {
     .repair-brands__catalog {
         padding: 0 32px;
     }
