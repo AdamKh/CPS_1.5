@@ -149,12 +149,12 @@ body, * {
 }
 
 .repair-brands__show-more--show::before {
-    content: url('../img/icons/arrow-down.svg');
+    content: url('img/icons/arrow-down.svg');
     margin-right: 9px;
 }
 
 .repair-brands__show-more--close::before {
-    content: url('../img/icons/arrow-down.svg');
+    content: url('img/icons/arrow-down.svg');
     margin-right: 9px;
 
     transform: rotate(180deg);
