@@ -27,39 +27,44 @@ if (mobileDevice) {
 }
 
 const showMoreBrands = document.querySelector('.repair-brands__show-more');
-const showMoreBrandsText = document.querySelector('.repair-brands__show-more .show-more__text');
 const showMoreBrandsIcon = document.querySelector('.repair-brands__show-more .show-more__icon');
 
 const brandCardTableHidden = document.querySelectorAll('.brand-card--table-hidden');
 const brandCardPcHidden = document.querySelectorAll('.brand-card--pc-hidden');
 
 
-let show = true;
+const btn = document.querySelector('.repair-brands__show-more');
+let btnClassList = btn.classList;
 
 showMoreBrands.addEventListener('click', function() {
-  if (show) {
-    showMoreBrandsText.textContent = 'Скрыть';
-    showMoreBrandsIcon.style['transition'] = '0.5s';
-    showMoreBrandsIcon.style['transform'] = 'rotate(180deg)';
+  if (Array.from(btnClassList).includes('repair-brands__show-more--show')) {
+    btn.textContent = 'Скрыть';
 
     for (let i = 0; i < brandCardTableHidden.length; i++) {
-      brandCardTableHidden[i].style['display'] = 'flex';
+      brandCardTableHidden[i].classList.remove('brand-card--table-hidden');
+      brandCardTableHidden[i].classList.remove('brand-card--pc-hidden');
+      brandCardTableHidden[i].classList.add('brand-card--table-show');
     }
 
-    show = false;
+    btn.classList.remove('repair-brands__show-more--show');
+    btn.classList.add('repair-brands__show-more--close');
+
   } else {
-    showMoreBrandsText.textContent = 'Показать все';
-    showMoreBrandsIcon.style['transform'] = 'rotate(0deg)';
+    btn.textContent = 'Показать все';
     
     if (pcDevice) {
       for (let i = 0; i < brandCardPcHidden.length; i++) {
-        brandCardPcHidden[i].style['display'] = 'none';
+        brandCardPcHidden[i].classList.remove('brand-card--pc-show');
+        brandCardPcHidden[i].classList.add('brand-card--pc-hidden');
       }
     } else {
       for (let i = 0; i < brandCardTableHidden.length; i++) {
-        brandCardTableHidden[i].style['display'] = 'none';
+        brandCardTableHidden[i].classList.remove('brand-card--table-show');
+        brandCardTableHidden[i].classList.add('brand-card--table-hidden');
       }
     }
-    show = true;
+    
+    btn.classList.remove('repair-brands__show-more--close');
+    btn.classList.add('repair-brands__show-more--show');
   }
 });

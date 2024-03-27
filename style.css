@@ -143,13 +143,21 @@ body, * {
     align-items: center;
 }
 
-.show-more__icon {
-    margin-right: 9px;
-}
-
 .repair-brands__show-more {
     display: none;
     margin-bottom: 34px;
+}
+
+.repair-brands__show-more--show::before {
+    content: url('../img/icons/arrow-down.svg');
+    margin-right: 9px;
+}
+
+.repair-brands__show-more--close::before {
+    content: url('../img/icons/arrow-down.svg');
+    margin-right: 9px;
+
+    transform: rotate(180deg);
 }
 
 
@@ -186,6 +194,10 @@ body, * {
     .brand-card--table-hidden {
         display: none;
     }
+
+    .brand-card--table-show {
+        display: flex;
+    }
 }
 
 @media screen and (min-width: 1120px) {
@@ -201,13 +213,17 @@ body, * {
         display: flex;
     }
 
+    .repair-brands__catalog--grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
     .brand-card--pc-hidden {
         display: none;
     }
 
-    .repair-brands__catalog--grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+    .brand-card--pc-show {
+        display: flex;
     }
 
 }
